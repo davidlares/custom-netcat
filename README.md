@@ -1,16 +1,16 @@
-# Custom Netcat
+## Custom Netcat
 
-This script is an attempt to mimic Netcat. It's an abstraction of the must-used functionalities of the tool but in a limited way. The foundational component in the script is the use of sockets for the client-server interaction and how to receive and send commands and responses respectively.
+This script is an attempt to mimic Netcat. It's an abstraction of the most-used functionalities of the tool, but in a limited way. The foundational component in the script is the use of sockets for the client-server interaction, and how to receive and send commands and responses, respectively.
 
-Netcat is an arbitrary tool for performing pen-testing activities and way more. Sockets, in general, present a completely different approach for software, many of them can be used in the security industry as well.
+Netcat is an arbitrary tool for performing pen-testing activities and way more. Sockets, in general, present a completely different approach for software; many of them can be used in the security industry as well.
 
 ## The client
 
-The client is conformed by an Ipv4 TCP socket module, which evaluates host and port values from the input args. So, we if have any data, it sends it, and an infinite while loop will receive and send the interaction until the connection is alive
+The client is composed of an IPv4 TCP socket module, which evaluates host and port values from the input args. So, if we have any data, we send it, and an infinite while loop will receive and send the interaction until the connection is alive
 
 ## The server
 
-The server does a little bit more, it checks and connects to a socket instance and it blocks the execution for incoming connections. When a connection is established, a new execution thread is created for that connection.
+The server does a little bit more; it checks and connects to a socket instance, and it blocks the execution for incoming connections. When a connection is established, a new execution thread is created for that connection.
 
 In both scenarios, the data collection is handled by limited socket buffers with encoded/decoded mechanisms
 
@@ -22,7 +22,7 @@ Because the nature of the program is to perform reverse shell connections. The s
 
 The `-l` flag is for listening, and the `-e` flag is for execution
 
-2. Outputing results to a file: `python -l -o /tmp/file.out [Server] [PORT]`
+2. Outputting results to a file: `python -l -o /tmp/file.out [Server] [PORT]`
 
 You can later check the output content with the `cat`, `less`, or `more` commands
 
@@ -33,9 +33,7 @@ The client-side is simpler.
 Just run the same file without some arguments: `python netcat.py -l -c [Server] [PORT]`
 
 ## Credits
-
- - [David E Lares](https://twitter.com/davidlares3)
+[David Lares S](https://davidlares.com)
 
 ## License
-
- - [MIT](https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT)
